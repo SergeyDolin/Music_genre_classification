@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from streamlit_echarts import st_echarts
 from catboost import CatBoostClassifier
-import plotly.express as px
 
 df = pd.read_csv('/Users/sergeidolin/anaconda3/Projects/Music_genre_classification/App/train.csv')
 raw_data = pd.read_csv('/Users/sergeidolin/anaconda3/Projects/Music_genre_classification/Data/kaggle_music_genre_train.csv')
@@ -13,70 +12,13 @@ mode_dict = {'Major' : 1, 'Minor' : 0, 'N': -1}
 duration = {'Long' : 1, 'Normal' : 0, 'Short': -1}
 music_recomend = pd.read_csv('/Users/sergeidolin/anaconda3/Projects/Music_genre_classification/Data/music_genre.csv')
 cat_model = CatBoostClassifier()
-cat_model.load_model('/Users/sergeidolin/anaconda3/Projects/Music_genre_classification/App/test_model')
+cat_model.load_model('/Users/sergeidolin/anaconda3/Projects/Music_genre_classification/App/CatModel.dump')
 
-
-        
 st.title("""
 Прогнозирование жанров музыки!
 
          ...и по этому все так, произошло!
 """)
-         
-st.title("""
-Как закалялась Data, или на чем обучалась модель.
-""")
-st.write('''
-Изначально данные представляли из себя это:''',
-raw_data.head(),    
-'''
-- `instance_id` - уникальный идентификатор трека
-- `track_name` - название трека
-- `acousticness` - акустичность
-- `danceability` - танцевальность
-- `duration_ms` -продолжительность в милисекундах
-- `energy` - энергичность
-- `instrumentalness` - инструментальность
-- `key` - базовый ключ (нота) произведения
-- `liveness` - привлекательность
-- `loudness` - громкость
-- `mode` - указывает на модальность (мажорную или минорную) трека
-- `speechiness` - выразительность
-- `tempo` - темп
-- `obtained_date` - дата загрузки в сервис
-- `valence` - привлекательность произведения для пользователей сервиса
-- `music_genre` - музыкальный жанр
-
-Первое на что я обычно смотрю это описательная статистика и корреляционные матрицы (Пирсон, Спирман), а также пропуски в данных.
-
-**Пирсон**''',
-px.imshow(raw_data[num_features].drop(['instance_id'], axis=1).corr(), text_auto=True),
-'''**Спирман**''',
-px.imshow(raw_data[num_features].drop(['instance_id'], axis=1).corr(method='spearman'), text_auto=True),
-'''**Описательная статистика**''',
-raw_data.describe(),
-'''**Доля пропусков в данных**''',
-pd.DataFrame(round(raw_data.isna().mean()*100,1)).style.background_gradient('coolwarm'),
-'''В процессе выполнения работы были выполнены операции по раширению датасета (увеличение записей) 
-из сторонних источников (сайт Kaggle), а также был произведен разведческий анализ данных. 
-Ниже представлены основные выжимки из анализа.
-''')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 st.sidebar.header('Параметры музыкального произведения')
