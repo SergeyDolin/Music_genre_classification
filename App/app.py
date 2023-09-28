@@ -8,7 +8,7 @@ import py7zr
 import os
 
 # import data
-df = pd.read_csv('../App/train.csv')
+df = pd.read_csv('./App/train.csv')
 music_recomend = pd.read_csv('../Data/music_genre.csv')
 
 # download model from ya.disk
