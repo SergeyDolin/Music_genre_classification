@@ -27,7 +27,7 @@ if os.path.isfile('./App/CatModel.dump.7z') is not True:
 
 # extract 7z with model
 if os.path.isfile('./App/CatModel.dump') is not True \
-    and os.path.isfile('../App/CatModel.dump.7z') is True:
+    and os.path.isfile('./App/CatModel.dump.7z') is True:
     with py7zr.SevenZipFile('./App/CatModel.dump.7z', mode='r') as z:
         z.extractall()
 
