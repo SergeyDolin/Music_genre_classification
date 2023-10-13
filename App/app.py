@@ -8,11 +8,11 @@ import py7zr
 import os
 
 # import data
-df = pd.read_csv('./App/train.csv')
-music_recomend = pd.read_csv('./Data/music_genre.csv')
+df = pd.read_csv('train.csv')
+music_recomend = pd.read_csv('../Data/music_genre.csv')
 
 # download model from ya.disk
-if os.path.isfile('./App/CatModel.dump.7z') is not True:
+if os.path.isfile('../App/CatModel.dump.7z') is not True:
     
     base_url = 'https://cloud-api.yandex.net/v1/disk/public/resources/download?'
     public_key = 'https://disk.yandex.ru/d/pdO-LvxKOcxZ3w'
@@ -22,18 +22,18 @@ if os.path.isfile('./App/CatModel.dump.7z') is not True:
     download_url = response.json()['href']
 
     download_response = requests.get(download_url)
-    with open('./App/CatModel.dump.7z', 'wb') as f:   
+    with open('../App/CatModel.dump.7z', 'wb') as f:   
         f.write(download_response.content)
 
 # extract 7z with model
-if os.path.isfile('./App/CatModel.dump') is not True \
-    and os.path.isfile('./App/CatModel.dump.7z') is True:
-    with py7zr.SevenZipFile('./App/CatModel.dump.7z', mode='r') as z:
+if os.path.isfile('../App/CatModel.dump') is not True \
+    and os.path.isfile('../App/CatModel.dump.7z') is True:
+    with py7zr.SevenZipFile('../App/CatModel.dump.7z', mode='r') as z:
         z.extractall()
 
 # load model
 cat_model = CatBoostClassifier()
-cat_model.load_model('./App/CatModel.dump')
+cat_model.load_model('../App/CatModel.dump')
 
 
 key_dict = {'N': -1,'C' : 1, 'C#' : 2, 'D' : 3, 'D#' : 4, 'E' : 5, 'F' : 6, 
