@@ -1,4 +1,4 @@
-# Music_genre_classification
+# Music genre classification
 
 **Цель исследования**
 
