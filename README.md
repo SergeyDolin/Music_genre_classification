@@ -82,3 +82,9 @@
     - F-beta 0.46
 - `CatBoostClassifier`
     - F-beta 0.94
+ 
+
+**Web сервис**
+![alt text](https://sun9-55.userapi.com/impg/BZcEdDeIL4j7xHBRdCQAZPNKjATDNUUVVl_U5g/MZSJ83Nmklg.jpg?size=2560x1499&quality=95&sign=bcddfd3dbb099ab34864d2d3ddb1aac0&type=album)
+
+![alt text]([https://sun9-55.userapi.com/impg/BZcEdDeIL4j7xHBRdCQAZPNKjATDNUUVVl_U5g/MZSJ83Nmklg.jpg?size=2560x1499&quality=95&sign=bcddfd3dbb099ab34864d2d3ddb1aac0&type=album](https://sun9-78.userapi.com/impg/Essl8bgqUc-B32YUcaQqcE9JeiSJ0Ucrwiqmag/KyQBGPJ-y9Y.jpg?size=2560x1589&quality=95&sign=634466a01981042a0d6dc752ed427d86&type=album)https://sun9-78.userapi.com/impg/Essl8bgqUc-B32YUcaQqcE9JeiSJ0Ucrwiqmag/KyQBGPJ-y9Y.jpg?size=2560x1589&quality=95&sign=634466a01981042a0d6dc752ed427d86&type=album)
